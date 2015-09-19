@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="23" started-at="2015-07-25T18:56:42Z" finished-at="2015-07-25T18:56:42Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="23" started-at="2015-07-25T18:56:42Z" finished-at="2015-07-25T18:56:42Z">
+      <class name="com.guch.test.JDBCReaderTest">
+        <test-method status="PASS" signature="getBloggerTest()[pri:0, instance:com.guch.test.JDBCReaderTest@520a4ee7]" name="getBloggerTest" duration-ms="11" started-at="2015-07-25T11:56:42Z" finished-at="2015-07-25T11:56:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getBloggerTest -->
+      </class> <!-- com.guch.test.JDBCReaderTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

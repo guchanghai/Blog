@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.guch.data.model.BloggerMap">
+
+  	<select id="select" resultType="com.guch.data.model.Blogger">
+    	select * from BLOG where id = #{id}
+  	</select>
+  	
+  	<!-- Create Blog Object -->
+	<insert id="create" parameterType="com.guch.data.model.Blogger">
+	INSERT INTO BLOGDB.BLOG
+		( id, title, category, content)
+		VALUES
+		( #{id}, #{title}, #{category}, #{content} );
+	</insert>
+	
+	<!-- Update Blog Object -->
+	<insert id="update" parameterType="com.guch.data.model.Blogger">
+		UPDATE BLOGDB.BLOG
+		SET
+		<if test="title != null"> BLOGDB.BLOG.title=#{title}</if>
+		<if test="category != null">,  BLOGDB.BLOG.category=#{category}</if>
+		<if test="content != null">,  BLOGDB.BLOG.content=#{content}</if>
+		WHERE BLOGDB.BLOG.id=#{id}
+	</insert>
+	
+	<!-- Delete Blog Item -->
+	<delete id="delete" parameterType="com.guch.data.model.Blogger">
+		DELETE FROM BLOGDB.BLOG
+		WHERE BLOGDB.BLOG.id=#{id}
+	</delete>
+	
+</mapper>
