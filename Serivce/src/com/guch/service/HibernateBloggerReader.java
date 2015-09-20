@@ -11,7 +11,6 @@ public class HibernateBloggerReader implements IBlogger {
 	private static SessionFactory sessionFactory = null;
 	private Session session = null;
 
-	@SuppressWarnings("deprecation")
 	private static SessionFactory buildSessionFactory() {
 		try {
 			// Create the SessionFactory from hibernate.cfg.xml

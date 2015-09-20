@@ -3,6 +3,11 @@ package com.guch.data.model;
 import java.io.Serializable;
 
 public class Blogger implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5185756578987079424L;
+	
 	int id;
 	String title;
 	String category;
