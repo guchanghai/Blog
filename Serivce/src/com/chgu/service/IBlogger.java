@@ -1,9 +1,9 @@
 /**
  * 
  */
-package com.guch.service;
+package com.chgu.service;
 
-import com.guch.data.model.Blogger;
+import com.chgu.data.model.Blogger;
 
 /**
  * @author chgu

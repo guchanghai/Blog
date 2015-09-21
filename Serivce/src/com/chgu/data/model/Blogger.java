@@ -1,4 +1,4 @@
-package com.guch.data.model;
+package com.chgu.data.model;
 
 import java.io.Serializable;
 

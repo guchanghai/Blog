@@ -1,4 +1,4 @@
-package com.guch.test;
+package com.chgu.test;
 
 import org.powermock.modules.testng.PowerMockTestCase;
 import org.testng.Assert;

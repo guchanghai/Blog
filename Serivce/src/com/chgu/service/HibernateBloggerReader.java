@@ -1,10 +1,10 @@
-package com.guch.service;
+package com.chgu.service;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import com.guch.data.model.Blogger;
+import com.chgu.data.model.Blogger;
 
 public class HibernateBloggerReader implements IBlogger {
 
@@ -14,7 +14,7 @@ public class HibernateBloggerReader implements IBlogger {
 	private static SessionFactory buildSessionFactory() {
 		try {
 			// Create the SessionFactory from hibernate.cfg.xml
-			return new Configuration().configure("res/hibernate/config.xml")
+			return new Configuration().configure("hibernate/config.xml")
 					.buildSessionFactory();
 		} catch (Throwable ex) {
 			// Make sure you log the exception, as it might be swallowed

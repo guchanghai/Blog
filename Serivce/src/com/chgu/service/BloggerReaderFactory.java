@@ -1,4 +1,4 @@
-package com.guch.service;
+package com.chgu.service;
 
 public class BloggerReaderFactory {
 	public static IBlogger getBloggerReader(String type) throws Exception {

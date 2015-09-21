@@ -1,4 +1,4 @@
-package com.guch.service;
+package com.chgu.service;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import com.guch.data.model.Blogger;
+import com.chgu.data.model.Blogger;
 
 public class JDBCBloggerReader implements IBlogger {
 	

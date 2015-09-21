@@ -1,4 +1,4 @@
-package com.guch.service;
+package com.chgu.service;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -8,7 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import com.guch.data.model.Blogger;
+import com.chgu.data.model.Blogger;
 
 public class IBatisBlogRead implements IBlogger {
 
@@ -21,7 +21,7 @@ public class IBatisBlogRead implements IBlogger {
 
 	private void loadIBatisConfig() {
 		try {
-			String resource = "res/ibatis/config.xml";
+			String resource = "ibatis/config.xml";
 			InputStream inputStream = Resources.getResourceAsStream(resource);
 			mSQLSessionFactory = new SqlSessionFactoryBuilder()
 					.build(inputStream);
@@ -37,7 +37,7 @@ public class IBatisBlogRead implements IBlogger {
 		// TODO Auto-generated method stub
 		Blogger blog = new Blogger(id, title, category, content);
 		int result = mSQLSession.insert(
-				"com.guch.data.model.BloggerMap.create", blog);
+				"com.chgu.data.model.BloggerMap.create", blog);
 		mSQLSession.commit();
 
 		return result;
@@ -49,7 +49,7 @@ public class IBatisBlogRead implements IBlogger {
 		Blogger blog = null;
 		try {
 			blog = mSQLSession.selectOne(
-					"com.guch.data.model.BloggerMap.select", 1);
+					"com.chgu.data.model.BloggerMap.select", id);
 		} finally {
 		}
 
@@ -65,26 +65,26 @@ public class IBatisBlogRead implements IBlogger {
 	@Override
 	public void deleteBlog(int id) {
 		// TODO Auto-generated method stub
-		mSQLSession.delete("com.guch.data.model.BloggerMap.delete", id);
+		mSQLSession.delete("com.chgu.data.model.BloggerMap.delete", id);
 		mSQLSession.commit();
 	}
 
 	@Override
 	public void updateBlog(int id, String title, String category, String content) {
 		// TODO Auto-generated method stub
-		mSQLSession.update("com.guch.data.model.BloggerMap.update", new Blogger(id, title, category, content));
+		mSQLSession.update("com.chgu.data.model.BloggerMap.update", new Blogger(id, title, category, content));
 		mSQLSession.commit();
 	}
 
 	@Override
 	public void updateBlog(Blogger blog) {
 		// TODO Auto-generated method stub
-		
-	}
+		mSQLSession.update("com.chgu.data.model.BloggerMap.update", blog);
+		mSQLSession.commit();	}
 
 	@Override
 	public void deleteBlog(Blogger blog) {
 		// TODO Auto-generated method stub
-		
+		this.deleteBlog(blog.getId());
 	}
 }

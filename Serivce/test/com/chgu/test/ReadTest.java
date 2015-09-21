@@ -1,8 +1,8 @@
-package com.guch.test;
+package com.chgu.test;
 
-import com.guch.data.model.Blogger;
-import com.guch.service.BloggerReaderFactory;
-import com.guch.service.IBlogger;
+import com.chgu.data.model.Blogger;
+import com.chgu.service.BloggerReaderFactory;
+import com.chgu.service.IBlogger;
 
 import org.powermock.modules.testng.PowerMockTestCase;
 import org.testng.annotations.Test;
@@ -22,18 +22,15 @@ public class ReadTest extends PowerMockTestCase {
 			/**
 			 * select, add, update and delete operation
 			 */
-			Blogger blog = blogger.getBlogger(2);
 			blogger.addBlogger(3, "学习swift", "前沿", "Apple Swift可能会比较流行。");
 
-			blog = blogger.getBlogger(3);
+			Blogger blog = blogger.getBlogger(3);
 			blog.setTitle("学习swift");
 			blog.setCategory("更新后");
 			blog.setContent("Apple Swift降低了学习门槛。");
 
-			// blogger.updateBlog(3, "学习swift", "更新后", "Apple Swift降低了学习门槛。");
 			blogger.updateBlog(blog);
 
-			// blogger.deleteBlog(3);
 			blogger.deleteBlog(blog);
 
 			if (blog != null) {
